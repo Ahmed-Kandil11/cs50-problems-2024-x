@@ -1,0 +1,32 @@
+#include <cs50.h>
+#include <stdio.h>
+int main(void)
+{
+    int cents, change = 0;
+    do
+    {
+        cents = get_int("enter the number of cents:  ");
+    }
+    while (cents < 0);
+    while (cents >= 25)
+    {
+        cents -= 25;
+        change++;
+    }
+    while (cents >= 10)
+    {
+        cents -= 10;
+        change++;
+    }
+    while (cents >= 5)
+    {
+        cents -= 5;
+        change++;
+    }
+    while (cents >= 1)
+    {
+        cents -= 1;
+        change++;
+    }
+    printf("Change owed: %i\n", change);
+}
